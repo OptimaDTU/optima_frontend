@@ -8,11 +8,8 @@ import PropTypes from 'prop-types';
 class FetchRender extends Component {
   
   static propTypes = {
-    toComplete:  PropTypes.objectOf({
-        then: PropTypes.func,
-        catch: PropTypes.func
-    }),
-    loadingNode: PropTypes.node,
+    toComplete:  PropTypes.objectOf(Promise),
+    loadingNode: PropTypes.func,
     render: PropTypes.func
   }
 
