@@ -5,7 +5,7 @@ import ModulesList from './ModulesList';
 
 const Home = () => {
   return (
-    <div className="Home mt-3">
+    <div className="Home">
       <Headline />
       <ModulesList />
     </div>

@@ -7,9 +7,9 @@ import ModuleCard from './ModuleCard';
  * Fetches the list of modules and renders the list
  */
 const ModulesList = () => {
-  const getModules = fetch("https://www.mocky.io/v2/5b9d16613200004900db9345").then(response => {
-    return response.json();
-  });
+  const getModules = fetch("https://optimadtu.herokuapp.com/modules/")
+    .catch(err => fetch("https://www.mocky.io/v2/5b9d16613200004900db9345"))
+    .then(response => response.json());
 
   const renderModules = (data) => {
     return (

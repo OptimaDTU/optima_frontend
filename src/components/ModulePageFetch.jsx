@@ -1,24 +1,29 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 
 import FetchRender from './FetchRender';
+import ModulePageContent from './ModulePageContent';
 
 const ModulePageFetch = (props) => {
-  const getModule = fetch("https://").then(response => 
-    response.json()
-  )
+  const getModule = Promise.reject(null)//fetch(`https://optimadtu.herokuapp.com/modules/${props.match.params.slug}/`)
+    .catch(err => fetch("https://www.mocky.io/v2/5b9fadc730000075007b12d2"))
+    .then(response => response.json());
+
+  const renderModulePage = (data) => {
+    return (
+      <ModulePageContent
+        modNumber={data.id}
+        description={data.description}
+        videos={data.videos}
+      />
+    )
+  }
 
   return (
-    <React.Fragment />
+    <FetchRender
+      toComplete={getModule}
+      render={renderModulePage}
+    />
   )
 }
-
-ModulePageFetch.propTypes = PropTypes.shape({
-  match: PropTypes.shape({
-    params: PropTypes.shape({
-      slug: PropTypes.string.isRequired
-    })
-  })
-})
 
 export default ModulePageFetch;

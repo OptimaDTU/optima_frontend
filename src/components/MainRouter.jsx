@@ -8,7 +8,7 @@ const MainRouter = () => {
   return (
     <Switch>
       <Route exact path="/" component={Home} />
-      <Route path="/module/{slug}" component={ModulePageFetch} />
+      <Route path="/module/:slug" component={ModulePageFetch} />
     </Switch>
   )
 }

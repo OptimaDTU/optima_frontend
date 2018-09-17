@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 const ModuleCard = (props) => {
   const linkStyle = {
     "color": "inherit",
-    "text-decoration": "none"
+    "textDecoration": "none"
   };
 
   return (
