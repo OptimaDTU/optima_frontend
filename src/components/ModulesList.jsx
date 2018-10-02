@@ -7,8 +7,8 @@ import ModuleCard from './ModuleCard';
  * Fetches the list of modules and renders the list
  */
 const ModulesList = () => {
-  const getModules = fetch("https://optimadtu.herokuapp.com/modules/")
-    .catch(err => fetch("https://www.mocky.io/v2/5b9d16613200004900db9345"))
+  const getModules = fetch("https://optimadtu.herokuapp.com/modules/?format=json")
+    .catch(err => fetch("https://www.mocky.io/v2/5bb31c12330000570011ca8b"))
     .then(response => response.json());
 
   const renderModules = (data) => {
@@ -17,11 +17,11 @@ const ModulesList = () => {
         {
           data.map(module => 
             <ModuleCard 
-              imageUrl={module.image} 
-              moduleNumber={module.number} 
-              data={module.about} 
-              key={module.slug} 
-              slug={module.slug} 
+              imageUrl={module["thumbnail"]} 
+              moduleNumber={module["id"]} 
+              data={module["description"]} 
+              key={module["slug"]} 
+              slug={module["slug"]} 
             />
           )
         }

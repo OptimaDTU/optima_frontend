@@ -18,7 +18,7 @@ const ModulePageContent = (props) => {
           </div>
           <div className="col-sm-3 border-left border-dark">
             {data["resources"].map((resource, index) =>
-              <a className="btn btn-outline-primary btn-sm m-2" href={resource["url"]} key={index}>{resource["title"]}</a>
+              <a className="btn btn-outline-primary btn-sm m-2" href={resource["url"]} target="_blank" key={index}>{resource["title"]}</a>
             )}
           </div>
         </div>
