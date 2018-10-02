@@ -13,11 +13,13 @@ const ModulePageContent = (props) => {
           <div className="col-sm-2">
             <img src={data.thumbnail} className="img-thumbnail" alt={data.title} />
           </div>
-          <div className="col-sm-6 align-self-center border-right border-dark">
+          <div className="col-sm-6 align-self-center">
             <p>{data.description}</p>
           </div>
-          <div className="col-sm-3">
-            
+          <div className="col-sm-3 border-left border-dark">
+            {data["resources"].map((resource, index) =>
+              <a className="btn btn-outline-primary btn-sm m-2" href={resource["url"]} key={index}>{resource["title"]}</a>
+            )}
           </div>
         </div>
       )

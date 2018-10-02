@@ -5,7 +5,7 @@ import ModulePageContent from './ModulePageContent';
 
 const ModulePageFetch = (props) => {
   const getModule = Promise.reject(null)//fetch(`https://optimadtu.herokuapp.com/modules/${props.match.params.slug}/`)
-    .catch(err => fetch("https://www.mocky.io/v2/5b9fadc730000075007b12d2"))
+    .catch(err => fetch("http://www.mocky.io/v2/5bb31855330000650011ca7e"))
     .then(response => response.json());
 
   const renderModulePage = (data) => {
