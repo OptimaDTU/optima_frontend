@@ -3,12 +3,14 @@ import { Switch, Route } from 'react-router-dom';
 
 import Home from './Home';
 import ModulePageFetch from './ModulePageFetch';
+import VideoPageFetch from './VideoPageFetch';
 
 const MainRouter = () => {
   return (
     <Switch>
-      <Route exact path="/" component={Home} />
+      <Route path="/module/:slug/video/:vidslug" component={VideoPageFetch} />
       <Route path="/module/:slug" component={ModulePageFetch} />
+      <Route exact path="/" component={Home} />
     </Switch>
   )
 }

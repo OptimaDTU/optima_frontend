@@ -14,6 +14,7 @@ const ModulePageFetch = (props) => {
         modNumber={data.id}
         description={data.description}
         videos={data.videos}
+        slug={data.slug}
       />
     )
   }

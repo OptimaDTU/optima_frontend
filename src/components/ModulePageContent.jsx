@@ -1,9 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 
 const ModulePageContent = (props) => {
-  
-  const videoList = (videoData) => {
+  const linkStyle = {
+    "color": "inherit",
+    "textDecoration": "none"
+  };
+
+  const videoList = (videoData, modSlug) => {
     return videoData.map((data, index) => {
       return (
         <div className="row mt-3 mb-3" key={index}>
@@ -11,7 +16,9 @@ const ModulePageContent = (props) => {
             {index+1}.
           </div>
           <div className="col-sm-2">
-            <img src={data.thumbnail} className="img-thumbnail" alt={data.title} />
+            <Link to={`/module/${modSlug}/video/${data.slug}`} style={linkStyle}>
+              <img src={data.thumbnail} className="img-thumbnail" alt={data.title} />
+            </Link>
           </div>
           <div className="col-sm-6 align-self-center">
             <p>{data.description}</p>
@@ -35,7 +42,7 @@ const ModulePageContent = (props) => {
           <p>{props.description}</p>
         </div>
       </div>
-      {videoList(props.videos)}
+      {videoList(props.videos, props.slug)}
     </div>
   )
 }
@@ -43,7 +50,8 @@ const ModulePageContent = (props) => {
 ModulePageContent.propTypes = {
   modNumber: PropTypes.number.isRequired,
   description: PropTypes.string.isRequired,
-  videos: PropTypes.array
+  videos: PropTypes.array,
+  slug: PropTypes.string.isRequired
 }
 
 export default ModulePageContent;
