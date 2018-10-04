@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types';
 import Youtube from 'react-youtube';
-import octicons from 'octicons';
+import {FaAngleLeft, FaAngleRight} from 'react-icons/fa';
 
 const VideoPageContent = (props) => {
   const getTags = (tags) => {
@@ -18,7 +18,6 @@ const VideoPageContent = (props) => {
       </div>
     )
   }
-  console.log(octicons);
   return (
     <div className="container mt-4 h-100">
       <div className="row">
@@ -33,14 +32,16 @@ const VideoPageContent = (props) => {
             />
           </div>
           <div className="row mt-1">
-            <div className="col-md-7 col-lg-7">
+            <div className="col-md-9 col-lg-7">
               {getTags(props.tags)}
             </div>
-            <div className="col-lg-2 col-md-3">
-              <a href="#" className="btn p-0" dangerouslySetInnerHTML={{__html: octicons["arrow-left"].toSVG()}} />
-              <a href="#" className="btn" dangerouslySetInnerHTML={{__html: octicons["arrow-right"].toSVG()}} />
+            <div className="col-lg-2 col-md-2">
+              <FaAngleLeft className="w-50 h-50" />
+              <FaAngleRight className="w-50 h-50" />
+              {/*<a href="#" className="btn p-0" dangerouslySetInnerHTML={{__html: octicons["arrow-left"].toSVG()}} />
+              <a href="#" className="btn" dangerouslySetInnerHTML={{__html: octicons["arrow-right"].toSVG()}} />*/}
             </div>
-            <div className="col-lg-3 col-md-2"></div>
+            <div className="col-lg-3 col-md-1"></div>
           </div>
           <div className="row mt-4">
             <h3>Download Material</h3>
