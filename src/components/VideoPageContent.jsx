@@ -19,35 +19,36 @@ const VideoPageContent = (props) => {
     )
   }
   return (
-    <div className="container mt-4 h-100">
+    <div className="container mt-4">
       <div className="row">
         <div className="col-sm-9">
-          <div className="row">
+          <div className="container">
             <h1>{props.title}</h1>
           </div>
-          <div className="row mt-4 mw-100">
+          <div className="container mt-4 mw-100">
             <Youtube
               videoId={props.videoId}
               className="mw-100"
             />
           </div>
-          <div className="row mt-1">
-            <div className="col-md-9 col-lg-7">
-              {getTags(props.tags)}
+          <div className="container mt-1">
+            <div className="row">
+              <div className="col-md-9 col-lg-7">
+                {getTags(props.tags)}
+              </div>
+              <div className="col-lg-2 col-md-2 p-2">
+                <FaAngleLeft className="w-50 h-50" />
+                <FaAngleRight className="w-50 h-50" />
+              </div>
+              <div className="col-lg-3 col-md-1"></div>
+              <div/>
             </div>
-            <div className="col-lg-2 col-md-2">
-              <FaAngleLeft className="w-50 h-50" />
-              <FaAngleRight className="w-50 h-50" />
-              {/*<a href="#" className="btn p-0" dangerouslySetInnerHTML={{__html: octicons["arrow-left"].toSVG()}} />
-              <a href="#" className="btn" dangerouslySetInnerHTML={{__html: octicons["arrow-right"].toSVG()}} />*/}
-            </div>
-            <div className="col-lg-3 col-md-1"></div>
           </div>
-          <div className="row mt-4">
+          <div className="container mt-4">
             <h3>Download Material</h3>
           </div>
-          <div className="row">
-            {getResources(props.resources)}
+          <div className="container">
+            {getResources([{url: "https://www.google.com", title:"Jupyter Notebook"}, {url: "https://www.github.com", title: "Python code"}])}
           </div>
         </div>
         <div className="col-sm-3">
