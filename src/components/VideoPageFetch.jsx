@@ -4,12 +4,26 @@ import FetchRender from './FetchRender';
 import VideoPageContent from './VideoPageContent';
 
 const VideoPageFetch = (props) => {
-  const getModule = fetch(`https://optimadtu.herokuapp.com/modules/${props.match.params.slug}/${props.match.params.vidslug}/?format=json`)
-    .catch(err => fetch("http://www.mocky.io/v2/5bb4114c3300000e00cad4d2"))
+  const getVid = fetch(`https://optimadtu.herokuapp.com/modules/${props.match.params.slug}/${props.match.params.vidslug}/?format=json`)
+    .catch(err => fetch("http://www.mocky.io/v2/5bb59d1c3000008100aabd6e"))
     .then(response => response.json());
 
+  const renderVideoPage = (data) => {
+    return (
+      <VideoPageContent
+        title={data.title}
+        videoId={data.yt_id}
+        tags={data.tags}
+        resources={data.resources}
+      />
+    )
+  }
+
   return (
-    <div></div>
+    <FetchRender
+      toComplete={getVid}
+      render={renderVideoPage}
+    />
   )
 }
 
