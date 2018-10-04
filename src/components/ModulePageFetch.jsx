@@ -2,6 +2,7 @@ import React from 'react';
 
 import FetchRender from './FetchRender';
 import ModulePageContent from './ModulePageContent';
+import DefaultLoading from './DefaultLoading';
 
 const ModulePageFetch = (props) => {
   const getModule = fetch(`https://optimadtu.herokuapp.com/modules/${props.match.params.slug}/?format=json`)
@@ -23,6 +24,7 @@ const ModulePageFetch = (props) => {
     <FetchRender
       toComplete={getModule}
       render={renderModulePage}
+      loadingNode={DefaultLoading}
     />
   )
 }

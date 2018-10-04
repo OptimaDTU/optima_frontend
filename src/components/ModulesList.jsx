@@ -2,6 +2,7 @@ import React from 'react';
 
 import FetchRender from './FetchRender';
 import ModuleCard from './ModuleCard';
+import DefaultLoading from './DefaultLoading';
 
 /**
  * Fetches the list of modules and renders the list
@@ -34,6 +35,7 @@ const ModulesList = () => {
       <FetchRender 
         toComplete={getModules}
         render={renderModules}
+        loadingNode={DefaultLoading}
       />
     </div>
   )

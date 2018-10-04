@@ -12,10 +12,17 @@ const VideoPageContent = (props) => {
   }
   const getResources = (resources) => {
     return (
-      <div className="list-group">
-      {resources.map((resource, index) => 
-        <a className="list-group-item list-group-item-action list-group-item-primary" href={resource.url} key={index}>{resource.title}</a>)}
-      </div>
+      <React.Fragment>
+        <div className="container mt-4">
+          <h3>Download Material</h3>
+        </div>
+        <div className="container">
+          <div className="list-group">
+          {resources.map((resource, index) => 
+            <a className="list-group-item list-group-item-action list-group-item-primary" href={resource.url} key={index}>{resource.title}</a>)}
+          </div>
+        </div>
+      </React.Fragment>
     )
   }
   return (
@@ -44,12 +51,7 @@ const VideoPageContent = (props) => {
               <div/>
             </div>
           </div>
-          <div className="container mt-4">
-            <h3>Download Material</h3>
-          </div>
-          <div className="container">
-            {getResources([{url: "https://www.google.com", title:"Jupyter Notebook"}, {url: "https://www.github.com", title: "Python code"}])}
-          </div>
+          {getResources([{url: "https://www.google.com", title:"Jupyter Notebook"}, {url: "https://www.github.com", title: "Python code"}])}
         </div>
         <div className="col-sm-3">
         </div>
