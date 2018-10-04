@@ -11,8 +11,8 @@ const ModulePageContent = (props) => {
   const videoList = (videoData, modSlug) => {
     return videoData.map((data, index) => {
       return (
-        <React.Fragment>
-          <div className="row mt-3 mb-3" key={index}>
+        <React.Fragment key={index}>
+          <div className="row mt-3 mb-3">
             <div className="col-sm-1 align-self-center d-none d-sm-block">
               {index+1}.
             </div>

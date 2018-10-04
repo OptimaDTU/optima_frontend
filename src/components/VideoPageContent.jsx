@@ -33,14 +33,14 @@ const VideoPageContent = (props) => {
           </div>
           <div className="container mt-1">
             <div className="row">
-              <div className="col-md-9 col-lg-7">
+              <div className="col-md-9 col-lg-7 col-7">
                 {getTags(props.tags)}
               </div>
-              <div className="col-lg-2 col-md-2 p-2">
+              <div className="col-lg-2 col-md-2 p-2 col-5">
                 <FaAngleLeft className="w-50 h-50" />
                 <FaAngleRight className="w-50 h-50" />
               </div>
-              <div className="col-lg-3 col-md-1"></div>
+              <div className="col-lg-3 col-md-1 d-none d-sm-block"></div>
               <div/>
             </div>
           </div>
