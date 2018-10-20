@@ -15,12 +15,17 @@ const renderVideoPage = (data) => {
       videoId={getVidId(data.url)}
       tags={data.tags}
       resources={data.resources}
+      vidSlug={data.slug}
+      nextSlug={data.next_video_slug}
+      prevSlug={data.previous_video_slug}
+      moduleSlug={data.module.slug}
     />
   )
 }
 
 const VideoPageFetch = (props) => {
-  const getVid = fetch(`https://optimadtu.herokuapp.com/modules/${props.match.params.slug}/${props.match.params.vidslug}/?format=json`)
+  const path = `modules/${props.match.params.slug}/${props.match.params.vidslug}/?format=json`;
+  const getVid = fetch(`https://optimadtu.herokuapp.com/${path}`)
     .then(response => response.json());
 
   return (
@@ -28,6 +33,7 @@ const VideoPageFetch = (props) => {
       toComplete={getVid}
       render={renderVideoPage}
       loadingNode={DefaultLoading}
+      key={path}
     />
   )
 }
