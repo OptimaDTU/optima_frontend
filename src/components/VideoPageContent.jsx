@@ -20,7 +20,7 @@ const getResources = (resources) => {
       <div className="container">
         <div className="list-group">
         {resources.map((resource, index) => 
-          <a className="list-group-item list-group-item-action list-group-item-primary" href={resource.url} key={index}>{resource.title}</a>)}
+          <a className="list-group-item list-group-item-action list-group-item-primary" href={resource.url} key={index} target="_blank">{resource.title}</a>)}
         </div>
       </div>
     </React.Fragment>
@@ -45,10 +45,10 @@ const getNav = (moduleSlug, prevSlug, nextSlug) => {
   )
 
   if (prevSlug == null)
-    prevLink = <FaAngleLeft className="w-50 h-50" />;
+    prevLink = <FaAngleLeft className="w-50 h-50" color="gray" />;
 
   if (nextSlug == null)
-    nextLink = <FaAngleRight className="w-50 h-50" />;
+    nextLink = <FaAngleRight className="w-50 h-50" color="gray" />;
 
   return (
     <React.Fragment>
@@ -84,7 +84,7 @@ const VideoPageContent = (props) => {
               <div/>
             </div>
           </div>
-          {getResources([{url: "https://www.google.com", title:"Jupyter Notebook"}, {url: "https://www.github.com", title: "Python code"}])}
+          {getResources(props.resources)}
         </div>
         <div className="col-sm-3">
         </div>
