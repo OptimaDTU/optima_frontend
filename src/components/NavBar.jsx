@@ -9,7 +9,7 @@ const NavBar = () => {
       <GlobalContext.Consumer>
         {data => <a className="nav-link text-light" href={data.forumLink}>Forum</a>}
       </GlobalContext.Consumer>
-      <Link className="nav-link d-none d-sm-block d-md-block  text-light" to="/team">The Team</Link>
+      <a className="nav-link d-none d-sm-block d-md-block  text-light" href="/team.html">The Team</a>
       <Link className="nav-link ml-auto  text-light" to="/signin">Sign In</Link>
     </nav>
   )
