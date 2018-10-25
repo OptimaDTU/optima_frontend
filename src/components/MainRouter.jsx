@@ -1,10 +1,10 @@
-import React from 'react';
-import { Switch, Route } from 'react-router-dom';
+import React from "react";
+import { Switch, Route } from "react-router-dom";
 
-import Home from './Home';
-import ModulePageFetch from './ModulePageFetch';
-import VideoPageFetch from './VideoPageFetch';
-import Team from '../Team/Team';
+import Home from "./Home";
+import ModulePageFetch from "./ModulePageFetch";
+import VideoPageFetch from "./VideoPageFetch";
+import Team from "../Team/Team";
 
 const MainRouter = () => {
   return (
@@ -14,7 +14,7 @@ const MainRouter = () => {
       <Route exact path="/team" component={Team} />
       <Route exact path="/" component={Home} />
     </Switch>
-  )
-}
+  );
+};
 
 export default MainRouter;

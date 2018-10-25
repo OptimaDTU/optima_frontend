@@ -1,7 +1,7 @@
-import React from 'react';
+import React from "react";
 
-import Headline from './Headline';
-import ModulesList from './ModulesList';
+import Headline from "./Headline";
+import ModulesList from "./ModulesList";
 
 const Home = () => {
   return (
@@ -9,7 +9,7 @@ const Home = () => {
       <Headline />
       <ModulesList />
     </div>
-  )
-}
+  );
+};
 
 export default Home;

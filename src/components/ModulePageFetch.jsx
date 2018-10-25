@@ -1,21 +1,19 @@
-import React from 'react';
+import React from "react";
 
-import FetchRender from './FetchRender';
-import ModulePageContent from './ModulePageContent';
-import DefaultLoading from './DefaultLoading';
+import FetchRender from "./FetchRender";
+import ModulePageContent from "./ModulePageContent";
+import DefaultLoading from "./DefaultLoading";
 
-const getResources = (resources) => {
+const getResources = resources => {
   if (!resources) return [];
-  return resources.map(res => (
-    {
-      title: res["title"],
-      url: res["url"]
-    }
-  ));
-}
+  return resources.map(res => ({
+    title: res["title"],
+    url: res["url"]
+  }));
+};
 
 // filter out data for use in rendering
-const getVideos = (videoJSONList) => {
+const getVideos = videoJSONList => {
   return videoJSONList.map(vidJSON => {
     return {
       title: vidJSON["title"],
@@ -23,12 +21,12 @@ const getVideos = (videoJSONList) => {
       slug: vidJSON["slug"],
       thumbnail: vidJSON["thumbnail"],
       resources: getResources(vidJSON["resources"])
-    }
+    };
   });
-}
+};
 
 // Render the module page from data received
-const renderModulePage = (data) => {
+const renderModulePage = data => {
   return (
     <ModulePageContent
       modNumber={data.id}
@@ -36,14 +34,17 @@ const renderModulePage = (data) => {
       videos={getVideos(data.videos)}
       slug={data.slug}
     />
-  )
-}
+  );
+};
 
-const ModulePageFetch = (props) => {
-  const getModule = fetch(`https://optimadtu.herokuapp.com/modules/${props.match.params.slug}/?format=json`)
-      .then(response => response.json());
-    // .catch(err => fetch("https://www.mocky.io/v2/5bb31855330000650011ca7e"))
-    // .then(response => response.json());
+const ModulePageFetch = props => {
+  const getModule = fetch(
+    `https://optimadtu.herokuapp.com/modules/${
+      props.match.params.slug
+    }/?format=json`
+  ).then(response => response.json());
+  // .catch(err => fetch("https://www.mocky.io/v2/5bb31855330000650011ca7e"))
+  // .then(response => response.json());
 
   return (
     <FetchRender
@@ -51,7 +52,7 @@ const ModulePageFetch = (props) => {
       render={renderModulePage}
       loadingNode={DefaultLoading}
     />
-  )
-}
+  );
+};
 
 export default ModulePageFetch;

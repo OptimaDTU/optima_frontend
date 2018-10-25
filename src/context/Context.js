@@ -1,10 +1,10 @@
-import React from 'react';
+import React from "react";
 
-import teamData from './team_data';
+import teamData from "./team_data";
 
 const Auth = React.createContext({
   signedIn: false,
-  username: ''
+  username: ""
 });
 
 const GlobalContext = React.createContext({
@@ -14,7 +14,4 @@ const GlobalContext = React.createContext({
 
 console.log(teamData);
 
-export {
-  GlobalContext,
-  Auth
-};
+export { GlobalContext, Auth };

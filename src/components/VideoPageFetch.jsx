@@ -1,14 +1,14 @@
-import React from 'react';
+import React from "react";
 
-import FetchRender from './FetchRender';
-import VideoPageContent from './VideoPageContent';
-import DefaultLoading from './DefaultLoading';
+import FetchRender from "./FetchRender";
+import VideoPageContent from "./VideoPageContent";
+import DefaultLoading from "./DefaultLoading";
 
-const getVidId = (vid) => {
-  return (new URL(vid)).searchParams.get("v");
-}
+const getVidId = vid => {
+  return new URL(vid).searchParams.get("v");
+};
 
-const renderVideoPage = (data) => {
+const renderVideoPage = data => {
   return (
     <VideoPageContent
       title={data.title}
@@ -20,13 +20,16 @@ const renderVideoPage = (data) => {
       prevSlug={data.previous_video_slug}
       moduleSlug={data.module.slug}
     />
-  )
-}
+  );
+};
 
-const VideoPageFetch = (props) => {
-  const path = `modules/${props.match.params.slug}/${props.match.params.vidslug}/?format=json`;
-  const getVid = fetch(`https://optimadtu.herokuapp.com/${path}`)
-    .then(response => response.json());
+const VideoPageFetch = props => {
+  const path = `modules/${props.match.params.slug}/${
+    props.match.params.vidslug
+  }/?format=json`;
+  const getVid = fetch(`https://optimadtu.herokuapp.com/${path}`).then(
+    response => response.json()
+  );
 
   return (
     <FetchRender
@@ -35,7 +38,7 @@ const VideoPageFetch = (props) => {
       loadingNode={DefaultLoading}
       key={path}
     />
-  )
-}
+  );
+};
 
 export default VideoPageFetch;
