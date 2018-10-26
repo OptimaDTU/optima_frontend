@@ -1,20 +1,20 @@
 import React from "react";
-import "./style.css";
-import himanshu from "./img/himanshu.jpeg";
-import akash from "./img/akash.jpeg";
-import anurag from "./img/anurag.jpeg";
-import chetan from "./img/chetan.jpeg";
-import gaurav from "./img/gaurav.jpeg";
-import mayank from "./img/mayank.jpeg";
-import nikhil from "./img/nikhil.jpeg";
-import rishabh from "./img/rishabh.jpeg";
-import sharan from "./img/sharan.jpeg";
-import shivang from "./img/shivang.jpeg";
-import shubham from "./img/shubham.jpeg";
-import shubhi from "./img/shubhi.jpeg";
-import sidd from "./img/sidd.jpeg";
-import suransh from "./img/suransh.jpeg";
-import vasu from "./img/vasu.jpeg";
+import "../assets/css/style.css";
+import himanshu from "../assets/img/himanshu.jpeg";
+import akash from "../assets/img/akash.jpeg";
+import anurag from "../assets/img/anurag.jpeg";
+import chetan from "../assets/img/chetan.jpeg";
+import gaurav from "../assets/img/gaurav.jpeg";
+import mayank from "../assets/img/mayank.jpeg";
+import nikhil from "../assets/img/nikhil.jpeg";
+import rishabh from "../assets/img/rishabh.jpeg";
+import sharan from "../assets/img/sharan.jpeg";
+import shivang from "../assets/img/shivang.jpeg";
+import shubham from "../assets/img/shubham.jpeg";
+import shubhi from "../assets/img/shubhi.jpeg";
+import sidd from "../assets/img/sidd.jpeg";
+import suransh from "../assets/img/suransh.jpeg";
+import vasu from "../assets/img/vasu.jpeg";
 
 const Team = () => {
   return (

@@ -2,11 +2,13 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { GlobalContext } from "../context/Context";
 
+import optima_logo from "../assets/img/optima_logo.png";
+
 const NavBar = () => {
   return (
     <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
       <Link className="navbar-brand" to="/">
-        Optima
+        <img src={optima_logo} width="80" height="30" class="d-inline-block align-top" alt="" />
       </Link>
       <GlobalContext.Consumer>
         {data => (
