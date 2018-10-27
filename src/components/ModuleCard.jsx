@@ -11,9 +11,9 @@ const ModuleCard = props => {
   return (
     <div className="col-sm-3 text-center ModuleCard">
       <Link to={`/module/${props.slug}`} style={linkStyle}>
-        <div className="card">
+        <div className="card h-100">
           <img
-            className="card-img-top img-thumbnail"
+            className="card-img-top img-thumbnail h-50"
             src={props.imageUrl}
             alt={props.moduleNumber}
           />

@@ -2,8 +2,8 @@ import React from "react";
 import { Switch, Route } from "react-router-dom";
 
 import Home from "./Home";
-import ModulePageFetch from "./ModulePageFetch";
-import VideoPageFetch from "./VideoPageFetch";
+import ModulePageFetch from "./ModulePage/ModulePageFetch";
+import VideoPageFetch from "./VideoPage/VideoPageFetch";
 import Team from "./Team";
 
 const MainRouter = () => {

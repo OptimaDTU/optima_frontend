@@ -4,21 +4,19 @@ import FetchRender from "../FetchRender";
 import VideoPageContent from "./VideoPageContent";
 import DefaultLoading from "../DefaultLoading";
 
-const getVidId = vid => {
-  return new URL(vid).searchParams.get("v");
-};
+import videoParse from "../../general/video_parse";
 
 const renderVideoPage = data => {
   return (
     <VideoPageContent
       title={data.title}
-      videoId={getVidId(data.url)}
+      videoId={data.videoId}
       tags={data.tags}
       resources={data.resources}
-      vidSlug={data.slug}
-      nextSlug={data.next_video_slug}
-      prevSlug={data.previous_video_slug}
-      moduleSlug={data.module.slug}
+      vidSlug={data.vidSlug}
+      nextSlug={data.nextSlug}
+      prevSlug={data.prevSlug}
+      moduleSlug={data.moduleSlug}
     />
   );
 };
@@ -27,9 +25,9 @@ const VideoPageFetch = props => {
   const path = `modules/${props.match.params.slug}/${
     props.match.params.vidslug
   }/?format=json`;
-  const getVid = fetch(`https://optimadtu.herokuapp.com/${path}`).then(
-    response => response.json()
-  );
+  const getVid = fetch(`https://optimadtu.herokuapp.com/${path}`)
+    .then(response => response.json())
+    .then(json => videoParse(json));
 
   return (
     <FetchRender

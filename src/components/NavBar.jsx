@@ -8,7 +8,7 @@ const NavBar = () => {
   return (
     <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
       <Link className="navbar-brand" to="/">
-        <img src={optima_logo} width="80" height="30" class="d-inline-block align-top" alt="" />
+        <img src={optima_logo} width="80" height="30" className="d-inline-block align-top" alt="" />
       </Link>
       <GlobalContext.Consumer>
         {data => (

@@ -15,7 +15,11 @@ const renderSingleModule = module => (
 );
 
 const renderModules = data => {
-  return <div className="row">{data.map(renderSingleModule)}</div>;
+  return (
+    <div className="row align-items-stretch">
+      {data.map(renderSingleModule)}
+    </div>
+  );
 };
 
 /**
