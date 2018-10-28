@@ -1,13 +1,13 @@
 import React from "react";
 
 import Headline from "./Headline";
-import ModulesList from "./ModulesList";
+import ModulesListFetch from "./ModulesListFetch";
 
 const Home = () => {
   return (
     <div className="Home">
       <Headline />
-      <ModulesList />
+      <ModulesListFetch />
     </div>
   );
 };
