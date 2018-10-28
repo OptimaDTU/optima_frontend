@@ -20,11 +20,13 @@ const VideoPageNavigation = props => {
     </Link>
   );
 
-  if (prevSlug == null)
+  if (prevSlug == null) {
     prevLink = <FaAngleLeft className="w-50 h-50" color="gray" />;
+  }
 
-  if (nextSlug == null)
+  if (nextSlug == null) {
     nextLink = <FaAngleRight className="w-50 h-50" color="gray" />;
+  }
 
   return (
     <React.Fragment>

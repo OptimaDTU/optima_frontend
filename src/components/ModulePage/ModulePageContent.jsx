@@ -22,10 +22,10 @@ const ModulePageContent = props => {
 };
 
 ModulePageContent.propTypes = {
-  modNumber: PropTypes.number.isRequired,
   description: PropTypes.string.isRequired,
-  videos: PropTypes.array,
-  slug: PropTypes.string.isRequired
+  modNumber: PropTypes.number.isRequired,
+  slug: PropTypes.string.isRequired,
+  videos: PropTypes.array
 };
 
 export default ModulePageContent;

@@ -7,34 +7,35 @@ import PropTypes from "prop-types";
  */
 class FetchRender extends Component {
   static propTypes = {
-    toComplete: PropTypes.objectOf(Promise),
     loadingNode: PropTypes.func,
-    render: PropTypes.func
+    render: PropTypes.func,
+    toComplete: PropTypes.objectOf(Promise)
   };
 
   static defaultProps = {
-    toComplete: Promise.resolve(null),
     loadingNode: () => <React.Fragment />,
-    render: data => <React.Fragment />
+    render: data => <React.Fragment />,
+    toComplete: Promise.resolve(null)
   };
 
   constructor(props) {
     super(props);
 
     this.state = {
-      fetched: false,
-      data: null
+      data: null,
+      fetched: false
     };
   }
 
   componentDidMount() {
-    if (this.state.fetched) return;
+    if (this.state.fetched) {
+      return;
+    }
 
     this.props.toComplete
       .then(data => {
         this.setState({ data: data, fetched: true });
-      })
-      .catch(console.log);
+      });
   }
 
   render() {

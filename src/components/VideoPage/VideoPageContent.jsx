@@ -53,14 +53,14 @@ const VideoPageContent = props => {
 };
 
 VideoPageContent.propTypes = {
-  title: PropTypes.string.isRequired,
-  videoId: PropTypes.string.isRequired,
-  tags: PropTypes.array,
-  resources: PropTypes.array,
-  vidSlug: PropTypes.string,
   moduleSlug: PropTypes.string,
+  nextSlug: PropTypes.string,
   prevSlug: PropTypes.string,
-  nextSlug: PropTypes.string
+  resources: PropTypes.array,
+  tags: PropTypes.array,
+  title: PropTypes.string.isRequired,
+  vidSlug: PropTypes.string,
+  videoId: PropTypes.string.isRequired
 };
 
 export default VideoPageContent;

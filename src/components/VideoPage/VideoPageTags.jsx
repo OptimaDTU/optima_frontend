@@ -7,7 +7,7 @@ const VideoPageTags = props => {
       className="btn btn-outline-secondary btn-sm m-2"
       target="_blank"
     >
-      #{tag["title"]}
+      #{tag.title}
     </button>
   );
 };

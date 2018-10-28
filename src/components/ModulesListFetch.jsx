@@ -1,26 +1,8 @@
 import React from "react";
 
 import FetchRender from "./FetchRender";
-import ModuleCard from "./ModuleCard";
 import DefaultLoading from "./DefaultLoading";
-
-const renderSingleModule = module => (
-  <ModuleCard
-    imageUrl={module.thumbnail}
-    moduleNumber={module.id}
-    data={module.description}
-    key={module.slug}
-    slug={module.slug}
-  />
-);
-
-const renderModules = data => {
-  return (
-    <div className="row align-items-stretch">
-      {data.map(renderSingleModule)}
-    </div>
-  );
-};
+import ModuleListRender from "./ModuleListRender";
 
 /**
  * Fetches the list of modules and renders the list
@@ -34,7 +16,7 @@ const ModulesList = () => {
     <div className="Modules container">
       <FetchRender
         toComplete={getModules}
-        render={renderModules}
+        render={data => <ModuleListRender data={data} />}
         loadingNode={DefaultLoading}
       />
     </div>

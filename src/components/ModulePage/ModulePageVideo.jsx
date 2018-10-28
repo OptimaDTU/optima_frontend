@@ -27,14 +27,14 @@ const ModulePageVideoItem = props => {
           <p className="p-1">{data.description}</p>
         </div>
         <div className="col-sm-3 border-left border-dark">
-          {data["resources"].map((resource, index) => (
+          {data.resources.map((resource, resindex) => (
             <a
               className="btn btn-outline-primary btn-sm m-2"
-              href={resource["url"]}
+              href={resource.url}
               target="_blank"
-              key={index}
+              key={resindex}
             >
-              {resource["title"]}
+              {resource.title}
             </a>
           ))}
         </div>

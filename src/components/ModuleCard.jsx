@@ -27,8 +27,8 @@ const ModuleCard = props => {
 };
 
 ModuleCard.propTypes = {
-  imageUrl: PropTypes.string.isRequired,
   data: PropTypes.string.isRequired,
+  imageUrl: PropTypes.string.isRequired,
   moduleNumber: PropTypes.number.isRequired,
   slug: PropTypes.string.isRequired
 };

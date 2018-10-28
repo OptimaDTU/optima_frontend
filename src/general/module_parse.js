@@ -5,10 +5,12 @@
  */
 
 const getResources = resources => {
-  if (!resources) return [];
+  if (!resources) {
+    return [];
+  }
   return resources.map(res => ({
-    title: res["title"],
-    url: res["url"]
+    title: res.title,
+    url: res.url
   }));
 };
 
@@ -16,22 +18,22 @@ const getResources = resources => {
 const getVideos = videoJSONList => {
   return videoJSONList.map(vidJSON => {
     return {
-      title: vidJSON["title"],
-      description: vidJSON["description"],
-      slug: vidJSON["slug"],
-      thumbnail: vidJSON["thumbnail"],
-      resources: getResources(vidJSON["resources"])
+      description: vidJSON.description,
+      resources: getResources(vidJSON.resources),
+      slug: vidJSON.slug,
+      thumbnail: vidJSON.thumbnail,
+      title: vidJSON.title,
     };
   });
 };
 
 const moduleParse = json => {
   return {
-    id: json.id,
     description: json.description,
-    videos: getVideos(json.videos),
-    slug: json.slug
-  }
-}
+    id: json.id,
+    slug: json.slug,
+    videos: getVideos(json.videos)
+  };
+};
 
 export default moduleParse;

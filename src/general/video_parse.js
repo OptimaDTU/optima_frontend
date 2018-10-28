@@ -4,14 +4,14 @@ const getVidId = vid => {
 
 const videoParse = json => {
   return {
-    title: json.title,
-    videoId: getVidId(json.url),
-    tags: json.tags,
-    resources: json.resources,
-    vidSlug: json.slug,
+    moduleSlug: json.module.slug,
     nextSlug: json.next_video_slug,
     prevSlug: json.previous_video_slug,
-    moduleSlug: json.module.slug
+    resources: json.resources,
+    tags: json.tags,
+    title: json.title,
+    vidSlug: json.slug,
+    videoId: getVidId(json.url)
   };
 };
 
