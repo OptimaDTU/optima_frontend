@@ -4,9 +4,11 @@ import React from "react";
 const wrapContext = <componentProps extends {}>(
   ContextConsumer: React.Consumer<{}>,
   Component: React.StatelessComponent<componentProps>
-) => {
+): React.SFC<componentProps> => {
   return (props: componentProps) => (
-    <ContextConsumer>{(value: {}) => <Component {...value} {...props} />}</ContextConsumer>
+    <ContextConsumer>
+      {(value: {}) => <Component {...value} {...props} />}
+    </ContextConsumer>
   );
 };
 

@@ -12,8 +12,8 @@ class App extends Component {
     return (
       <GlobalContext.Provider
         value={{
-          apiurl: "https://optimadtu.herokuapp.com",
-          forumLink: "https://optima-dtu.herokuapp.com/"
+          apiurl: process.env.API_URL,
+          forumLink: process.env.FORUM_LINK
         }}
       >
         <BrowserRouter>

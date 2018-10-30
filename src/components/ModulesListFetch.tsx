@@ -32,6 +32,4 @@ const ModulesList: React.SFC<IProps> = (props: IProps) => {
   );
 };
 
-const ModulesListFetch = wrapContext<IProps>(GlobalContext.Consumer, ModulesList) as React.SFC<{}>;
-
-export default ModulesListFetch;
+export default wrapContext<IProps>(GlobalContext.Consumer, ModulesList) as React.SFC<{}>;

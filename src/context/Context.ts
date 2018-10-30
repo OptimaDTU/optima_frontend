@@ -6,8 +6,8 @@ const Auth = React.createContext({
 });
 
 const GlobalContext = React.createContext({
-  apiurl: "https://optimadtu.herokuapp.com",
-  forumLink: "https://optima-dtu.herokuapp.com/"
+  apiurl: process.env.API_URL,
+  forumLink: process.env.FORUM_LINK
 });
 
 export { GlobalContext, Auth };
