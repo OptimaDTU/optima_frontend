@@ -1,14 +1,22 @@
 import React from "react";
 
-const VideoPageTags = props => {
-  const {tag} = props;
+interface IProps {
+  tag: {
+    title: string;
+    url: string;
+  };
+}
+
+const VideoPageTags = (props: IProps) => {
+  const { tag } = props;
   return (
-    <button
+    <a
       className="btn btn-outline-secondary btn-sm m-2"
       target="_blank"
+      href={tag.url}
     >
       #{tag.title}
-    </button>
+    </a>
   );
 };
 

@@ -1,12 +1,19 @@
 import React from "react";
 
+import { GlobalContext } from "../../context/Context";
+import DefaultLoading from "../DefaultLoading";
 import FetchRender from "../FetchRender";
 import VideoPageContent from "./VideoPageContent";
-import DefaultLoading from "../DefaultLoading";
 
 import videoParse from "../../general/video_parse";
+import wrapContext from "../../general/wrap_context";
 
-const renderVideoPage = data => {
+interface IProps {
+  apiurl: string;
+  match: any;
+}
+
+const renderVideoPage = (data: any) => {
   return (
     <VideoPageContent
       title={data.title}
@@ -21,11 +28,11 @@ const renderVideoPage = data => {
   );
 };
 
-const VideoPageFetch = props => {
+const VideoPageFetch = (props: IProps) => {
   const path = `modules/${props.match.params.slug}/${
     props.match.params.vidslug
   }/?format=json`;
-  const getVid = fetch(`https://optimadtu.herokuapp.com/${path}`)
+  const getVid = fetch(`${props.apiurl}/${path}`)
     .then(response => response.json())
     .then(json => videoParse(json));
 
@@ -39,4 +46,4 @@ const VideoPageFetch = props => {
   );
 };
 
-export default VideoPageFetch;
+export default wrapContext(GlobalContext.Consumer, VideoPageFetch);

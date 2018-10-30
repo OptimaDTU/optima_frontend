@@ -6,8 +6,8 @@ const Auth = React.createContext({
 });
 
 const GlobalContext = React.createContext({
-  apiurl: process.env.API_URL,
-  forumLink: process.env.FORUM_LINK
+  apiurl: process.env.REACT_APP_API_URL,
+  forumLink: process.env.REACT_APP_FORUM_LINK
 });
 
 export { GlobalContext, Auth };

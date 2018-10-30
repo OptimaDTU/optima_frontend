@@ -11,6 +11,6 @@ Website Preview : [website](https://optimadtu.z29.web.core.windows.net/)
 # Deploying guide
 1. Clone the repo.
 2. Run `npm install` to get all dependencies inside the cloned repo.
-3. Edit the FORUM_LINK and API_URL variables in `.env` file. They are set to development defaults.
+3. Edit the REACT_APP_FORUM_LINK and REACT_APP_API_URL variables in `.env` file. They are set to development defaults.
 4. Build with `yarn build` command.
 5. The static files are generated in `build/` folder. Copy the files wherever you need to use them.

@@ -1,13 +1,20 @@
 import React from "react";
 
+import { GlobalContext } from "../../context/Context";
+import DefaultLoading from "../DefaultLoading";
 import FetchRender from "../FetchRender";
 import ModulePageContent from "./ModulePageContent";
-import DefaultLoading from "../DefaultLoading";
 
 import moduleParse from "../../general/module_parse";
+import wrapContext from "../../general/wrap_context";
+
+interface IProps {
+  apiurl: string;
+  match: any;
+}
 
 // Render the module page from data received
-const renderModulePage = data => {
+const renderModulePage = (data: any) => {
   return (
     <ModulePageContent
       modNumber={data.id}
@@ -18,11 +25,9 @@ const renderModulePage = data => {
   );
 };
 
-const ModulePageFetch = props => {
+const ModulePageFetch = (props: IProps) => {
   const getModule = fetch(
-    `https://optimadtu.herokuapp.com/modules/${
-      props.match.params.slug
-    }/?format=json`
+    `${props.apiurl}/modules/${props.match.params.slug}/?format=json`
   )
     .then(response => response.json())
     .then(json => moduleParse(json));
@@ -36,4 +41,4 @@ const ModulePageFetch = props => {
   );
 };
 
-export default ModulePageFetch;
+export default wrapContext(GlobalContext.Consumer, ModulePageFetch);

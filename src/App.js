@@ -12,8 +12,8 @@ class App extends Component {
     return (
       <GlobalContext.Provider
         value={{
-          apiurl: process.env.API_URL,
-          forumLink: process.env.FORUM_LINK
+          apiurl: process.env.REACT_APP_API_URL,
+          forumLink: process.env.REACT_APP_FORUM_LINK
         }}
       >
         <BrowserRouter>
