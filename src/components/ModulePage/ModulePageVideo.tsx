@@ -1,7 +1,13 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const ModulePageVideoItem = props => {
+interface IProps {
+  modSlug: string;
+  data: any;
+  index: number;
+}
+
+const ModulePageVideoItem = (props: IProps) => {
   const { modSlug, data, index } = props;
   const linkStyle = {
     color: "inherit",
@@ -27,9 +33,9 @@ const ModulePageVideoItem = props => {
           <p className="p-1">{data.description}</p>
         </div>
         <div className="col-sm-3 border-left border-dark">
-          {data.resources.map((resource, resindex) => (
+          {data.resources.map((resource: any, resindex: number) => (
             <a
-              className="btn btn-outline-primary btn-sm m-2"
+              className="btn btn-outline-primary btn-sm m-2 resource-link"
               href={resource.url}
               target="_blank"
               key={resindex}
