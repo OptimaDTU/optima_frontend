@@ -11,7 +11,10 @@ class App extends Component {
   render() {
     return (
       <GlobalContext.Provider
-        value={{ forumLink: "https://optima-dtu.herokuapp.com/" }}
+        value={{
+          apiurl: "https://optimadtu.herokuapp.com",
+          forumLink: "https://optima-dtu.herokuapp.com/"
+        }}
       >
         <BrowserRouter>
           <div className="App mb-5">
