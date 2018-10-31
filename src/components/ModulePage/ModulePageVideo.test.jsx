@@ -22,7 +22,11 @@ test("Displays image wrapped in link", async () => {
     />
   );
   const { getByLabelText, getByText, getByTestId, container } = render(element);
-  expect(container.querySelector("img").parentElement.getAttribute("href")).toBe("/module/first/video/first-vid")
+  expect(
+    container.querySelector("img").parentElement.getAttribute("href")
+  ).toBe("/module/first/video/first-vid");
   expect(getByText("2.").tagName.toLowerCase()).toBe("div");
-  expect(container.querySelectorAll(".resource-link").length).toBe(resources.length);
+  expect(container.querySelectorAll(".resource-link").length).toBe(
+    resources.length
+  );
 });
