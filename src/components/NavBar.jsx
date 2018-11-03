@@ -17,9 +17,9 @@ const NavBar = () => {
           </a>
         )}
       </GlobalContext.Consumer>
-      <a className="nav-link text-light" href="/team">
+      <Link className="nav-link text-light" to="/team">
         The Team
-      </a>
+      </Link>
     </nav>
   );
 };

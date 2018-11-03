@@ -10,7 +10,17 @@
         "kind": "build",
         "isDefault": true
       },
-      "problemMatcher": ["$eslint-compact"]
+      "problemMatcher": [
+        "$eslint-compact"
+      ]
+    },
+    {
+      "type": "npm",
+      "script": "test",
+      "group": {
+        "kind": "test",
+        "isDefault": true
+      }
     }
   ]
 }

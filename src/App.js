@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { BrowserRouter } from "react-router-dom";
+import { HashRouter } from "react-router-dom";
 
 import { GlobalContext } from "./context/Context";
 import NavBar from "./components/NavBar";
@@ -16,12 +16,12 @@ class App extends Component {
           forumLink: process.env.REACT_APP_FORUM_LINK
         }}
       >
-        <BrowserRouter>
+        <HashRouter basename="/">
           <div className="App mb-5">
             <NavBar />
             <MainRouter />
           </div>
-        </BrowserRouter>
+        </HashRouter>
       </GlobalContext.Provider>
     );
   }

@@ -11,8 +11,8 @@ const MainRouter = () => {
     <Switch>
       <Route path="/module/:slug/video/:vidslug" component={VideoPageFetch} />
       <Route path="/module/:slug" component={ModulePageFetch} />
-      <Route exact path="/team" component={Team} />
-      <Route exact path="/" component={Home} />
+      <Route path="/team" component={Team} />
+      <Route path="/" component={Home} />
     </Switch>
   );
 };

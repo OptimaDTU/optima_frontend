@@ -27,10 +27,6 @@ class FetchRender extends Component<IProps, any> {
   }
 
   public componentDidMount() {
-    if (this.state.fetched) {
-      return;
-    }
-
     this.props.toComplete
       .then(data => {
         this.setState({ data, fetched: true });
